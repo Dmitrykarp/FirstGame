@@ -64,11 +64,11 @@ public class Player {
             fallingSprite = new BufferedImage[1];
             walkingSprite = new BufferedImage[5];
 
-            idleSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/stay.gif"));
-            jumpingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/Jump.gif"));
-            fallingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/fall.gif"));
+            idleSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/onePerson/stay.gif"));
+            jumpingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/onePerson/Jump.gif"));
+            fallingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/onePerson/fall.gif"));
 
-            BufferedImage image = ImageIO.read(new File("src/main/resources/Graphics/Go.gif"));
+            BufferedImage image = ImageIO.read(new File("src/main/resources/Graphics/onePerson/Go.gif"));
             for (int i = 0; i< walkingSprite.length; i++){
                 walkingSprite[i]=image.getSubimage(
                         i*width+i,
@@ -111,6 +111,68 @@ public class Player {
         bottomRight = tileMap.isBlocked(bottomTile, rightTile);
 
 
+    }
+
+    public void setPerson(int x){
+        if(x == 1){
+            width = 24;
+            height = 24;
+            try {
+                // Количество спрайтов на одном шите!
+                idleSprite = new BufferedImage[1];
+                jumpingSprite = new BufferedImage[1];
+                fallingSprite = new BufferedImage[1];
+                walkingSprite = new BufferedImage[5];
+
+                idleSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/onePerson/stay.gif"));
+                jumpingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/onePerson/Jump.gif"));
+                fallingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/onePerson/fall.gif"));
+
+                BufferedImage image = ImageIO.read(new File("src/main/resources/Graphics/onePerson/Go.gif"));
+                for (int i = 0; i< walkingSprite.length; i++){
+                    walkingSprite[i]=image.getSubimage(
+                            i*width+i,
+                            0,
+                            width,
+                            height
+                    );
+                }
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
+        if(x == 2){
+            try {
+                width = 28;
+                height = 28;
+                // Количество спрайтов на одном шите!
+                idleSprite = new BufferedImage[1];
+                jumpingSprite = new BufferedImage[1];
+                fallingSprite = new BufferedImage[1];
+                walkingSprite = new BufferedImage[5];
+
+                idleSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/twoPerson/stay.gif"));
+                jumpingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/twoPerson/Jump.gif"));
+                fallingSprite[0] = ImageIO.read(new File("src/main/resources/Graphics/twoPerson/fall.gif"));
+
+                BufferedImage image = ImageIO.read(new File("src/main/resources/Graphics/twoPerson/Go.gif"));
+                for (int i = 0; i< walkingSprite.length; i++){
+                    walkingSprite[i]=image.getSubimage(
+                            i*width+i,
+                            0,
+                            width,
+                            height
+                    );
+                }
+
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////

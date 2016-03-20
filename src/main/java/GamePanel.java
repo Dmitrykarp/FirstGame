@@ -111,8 +111,15 @@ public class GamePanel extends Container implements  Runnable, KeyListener{
         if (code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_D){
             player.setRight(true);
         }
-        if (code == KeyEvent.VK_UP || code == KeyEvent.VK_W){
+        if (code == KeyEvent.VK_UP || code == KeyEvent.VK_SPACE){
             player.setJumping(true);
+        }
+
+        if (code == KeyEvent.VK_1){
+            player.setPerson(1);
+        }
+        if (code == KeyEvent.VK_2){
+            player.setPerson(2);
         }
 
 
@@ -125,6 +132,9 @@ public class GamePanel extends Container implements  Runnable, KeyListener{
         }
         if (code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_D){
             player.setRight(false);
+        }
+        if (code == KeyEvent.VK_UP || code == KeyEvent.VK_SPACE){
+            player.setJumping(false);
         }
     }
 }
