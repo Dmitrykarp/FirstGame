@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -10,6 +11,7 @@ public class GamePanel extends Container implements  Runnable, KeyListener{
 
     public static final int WIDTH = 400;
     public static final int HEIGHT = 400;
+
 
     private Thread thread;
     private boolean running;
@@ -71,8 +73,8 @@ public class GamePanel extends Container implements  Runnable, KeyListener{
         image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         g = (Graphics2D) image.getGraphics();
 
-        tileMap = new TileMap("src/main/resources/map2.txt", 32);
-        tileMap.loadTiles("src/main/resources/Graphics/tileset.gif");
+        tileMap = new TileMap("src/main/resources/map3.txt", 32);
+        tileMap.loadTiles("src/main/resources/Graphics/tileset3.gif");
         player = new Player(tileMap);
         player.setx(50);
         player.sety(50);
