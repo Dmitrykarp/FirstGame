@@ -21,6 +21,11 @@ public class TileMap {
     private BufferedImage tileset;
     private Tile[][] tiles;
 
+    private int minx;
+    private int miny;
+    private int maxx = 0;
+    private int maxy = 0;
+
     public TileMap(String s, int titleSize){
         this.tileSize = titleSize;
 
@@ -30,6 +35,9 @@ public class TileMap {
             mapWidth = Integer.parseInt(br.readLine());
             mapHeight = Integer.parseInt(br.readLine());
             map = new int[mapHeight][mapWidth];
+
+            minx = GamePanel.WIDTH - mapWidth * titleSize;
+            miny = GamePanel.HEIGHT - mapHeight * titleSize;
 
             String delimiters = "\\s+";
             for(int row = 0; row < mapHeight; row++){
@@ -100,8 +108,24 @@ public class TileMap {
         return tiles[r][c].isBlocked();
     }
 
-    public void setx(int i){x=i;}
-    public void sety(int i){y=i;}
+    public void setx(int i){
+        x = i;
+        if (x < minx){
+            x = minx;
+        }
+        if (x > maxx){
+            x = maxx;
+        }
+    }
+    public void sety(int i){
+        y = i;
+        if (y < miny){
+            y = miny;
+        }
+        if (y > maxy){
+            y = maxy;
+        }
+    }
 
     ////////////////////////////////////////////////////////////////////
 

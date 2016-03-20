@@ -76,7 +76,6 @@ public class Player {
                         width,
                         height
                 );
-                System.out.println(+i +" = " +walkingSprite[i].getWidth() +" x " + walkingSprite[i].getHeight());
             }
 
 
