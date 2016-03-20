@@ -1,7 +1,7 @@
 import java.awt.image.BufferedImage;
 
 /**
- * Created by Support on 20.03.2016.
+ * Created by DmitryKarp on 20.03.2016.
  */
 public class Tile {
 
