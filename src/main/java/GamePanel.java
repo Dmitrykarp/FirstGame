@@ -9,8 +9,8 @@ import java.awt.image.BufferedImage;
  */
 public class GamePanel extends Container implements  Runnable, KeyListener{
 
-    public static final int WIDTH = 400;
-    public static final int HEIGHT = 400;
+    public static final int WIDTH = 1024;
+    public static final int HEIGHT = 768;
 
 
     private Thread thread;
@@ -73,7 +73,7 @@ public class GamePanel extends Container implements  Runnable, KeyListener{
         image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
         g = (Graphics2D) image.getGraphics();
 
-        tileMap = new TileMap("src/main/resources/map3.txt", 32);
+        tileMap = new TileMap("src/main/resources/map136x91.txt", 32);
         tileMap.loadTiles("src/main/resources/Graphics/tileset3.gif");
         player = new Player(tileMap);
         player.setx(50);
